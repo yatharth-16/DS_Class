@@ -64,6 +64,46 @@ public class CircularLinkedList {
 		return head;
 	}
 	
+	public static Node<Integer> deleteNode()
+	{
+	      if (head == null) 
+                return null; 
+		
+		Node<Integer> curr=head;
+		Node<Integer> prev= null;
+		 while (curr.data != key) { 
+                    if (curr.next == head) { 
+                System.out.printf("Node not Found"); 
+                       break; 
+                } 
+			prev=curr;
+			curr = curr.next; 
+			
+			 if (curr.next == head) { 
+                          head = null; 
+                          return head; 
+                        } 
+			 
+			 if (curr == head) { 
+                        prev = head; 
+                    while (prev.next != head) 
+                    prev = prev.next; 
+                    head = curr.next; 
+                    prev.next = head; 
+                      } 
+			 else if (curr.next == head) { 
+                       prev.next = head; 
+                       }
+			else { 
+                        prev.next = curr.next; 
+                         } 
+                     return head; 
+			 	 
+			 
+	       }
+		
+	}
+	
 	
 	public static void  print(Node<Integer> head)
 	{
